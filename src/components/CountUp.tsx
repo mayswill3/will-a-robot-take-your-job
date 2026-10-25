@@ -8,11 +8,13 @@ interface Props {
   value: number;
   suffix?: string;
   caption: string;
+  /** The with-tooling range, built from the facts file so it can never drift. */
+  note: string;
+  /** Short plain-English attribution; the URL lives in the methodology footer. */
   source: string;
-  sourceUrl: string;
 }
 
-export function CountUp({ value, suffix = "%", caption, source, sourceUrl }: Props) {
+export function CountUp({ value, suffix = "%", caption, note, source }: Props) {
   const { ref, inView } = useInView<HTMLDivElement>();
   const reduced = useReducedMotion();
   const [n, setN] = useState(0);
@@ -44,12 +46,8 @@ export function CountUp({ value, suffix = "%", caption, source, sourceUrl }: Pro
         </span>
       </p>
       <p className={styles.caption}>{caption}</p>
-      <p className={styles.src}>
-        With AI tools built on top, it is 47 to 56% of tasks.{" "}
-        <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-          {source}
-        </a>
-      </p>
+      <p className={styles.note}>{note}</p>
+      <p className={styles.src}>{source}</p>
     </div>
   );
 }

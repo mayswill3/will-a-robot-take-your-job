@@ -156,7 +156,7 @@
    "key": "tasks_faster_llm_tools",
    "label": "Share of tasks with LLM-powered software on top",
    "value": 47,
-   "display": "47 to 56%",
+   "display": "47% to 56%",
    "range": [
     47,
     56

@@ -358,9 +358,10 @@ export function Story({
         >
           <CountUp
             value={taskStat.value ?? 0}
-            caption="of all work tasks could already be done faster by a chatbot alone, at the same quality."
-            source={toolStat.source}
-            sourceUrl={toolStat.source_url}
+            caption="of all US work tasks could already be done faster by a chatbot alone, at the same quality."
+            note={`With AI tools built on top, it is ${toolStat.display} of tasks.`}
+            source="Source: 'GPTs are GPTs', OpenAI and University of Pennsylvania researchers, published in Science, 2024. Full references at the foot of the page."
+
           />
         </Section>
 
